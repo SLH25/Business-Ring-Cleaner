@@ -1,0 +1,148 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+  }
+
+  body {
+    @apply bg-cream font-sans text-ink antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display font-semibold text-brand-navy;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-brand ring-offset-2 ring-offset-white;
+  }
+
+  ::selection {
+    @apply bg-brand/15 text-brand-navy;
+  }
+
+  img {
+    @apply select-none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .section {
+    @apply py-16 md:py-24;
+  }
+
+  .section-head {
+    @apply mx-auto max-w-3xl text-center;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full bg-brand/10 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-brand sm:text-xs;
+  }
+
+  .heading-xl {
+    @apply text-3xl leading-tight sm:text-4xl md:text-5xl;
+  }
+
+  .heading-lg {
+    @apply text-2xl leading-snug sm:text-3xl md:text-4xl;
+  }
+
+  .heading-md {
+    @apply text-xl leading-snug md:text-2xl;
+  }
+
+  .lead {
+    @apply text-base leading-relaxed text-ink/70 md:text-lg;
+  }
+
+  .btn {
+    @apply inline-flex h-12 shrink-0 items-center justify-center gap-2 rounded-full px-6 text-sm font-semibold transition duration-300 ease-soft md:text-base;
+  }
+
+  .btn-primary {
+    @apply inline-flex h-12 shrink-0 items-center justify-center gap-2 rounded-full bg-brand px-6 text-sm font-semibold text-white shadow-soft transition duration-300 ease-soft hover:-translate-y-0.5 hover:bg-brand-dark hover:shadow-lift md:text-base;
+  }
+
+  .btn-outline {
+    @apply inline-flex h-12 shrink-0 items-center justify-center gap-2 rounded-full border-2 border-brand/60 bg-white/80 px-6 text-sm font-semibold text-brand transition duration-300 ease-soft hover:-translate-y-0.5 hover:border-brand hover:bg-white md:text-base;
+  }
+
+  .btn-whatsapp {
+    @apply inline-flex h-12 shrink-0 items-center justify-center gap-2 rounded-full bg-whatsapp px-6 text-sm font-semibold text-white shadow-soft transition duration-300 ease-soft hover:-translate-y-0.5 hover:brightness-95 md:text-base;
+  }
+
+  .btn-light {
+    @apply inline-flex h-12 shrink-0 items-center justify-center gap-2 rounded-full bg-white px-6 text-sm font-semibold text-brand-navy shadow-soft transition duration-300 ease-soft hover:-translate-y-0.5 hover:bg-cream md:text-base;
+  }
+
+  .btn-ghost-light {
+    @apply inline-flex h-12 shrink-0 items-center justify-center gap-2 rounded-full border-2 border-white/60 px-6 text-sm font-semibold text-white transition duration-300 ease-soft hover:-translate-y-0.5 hover:bg-white/10 md:text-base;
+  }
+
+  .icon-circle {
+    @apply flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-brand text-white shadow-soft;
+  }
+
+  .card {
+    @apply rounded-2xl border border-brand/10 bg-white p-6 shadow-soft transition duration-300 ease-soft;
+  }
+
+  .card-hover {
+    @apply hover:-translate-y-1 hover:border-brand/25 hover:shadow-card;
+  }
+
+  .pill {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-brand/15 bg-white px-4 py-2 text-sm font-medium text-brand-navy;
+  }
+
+  .check-item {
+    @apply flex items-start gap-2 text-sm leading-relaxed text-ink/75;
+  }
+
+  .safe-bottom {
+    padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 0.5rem);
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}

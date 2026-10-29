@@ -1,0 +1,3 @@
+# Réécriture SPA pour Netlify / Cloudflare Pages :
+# toutes les routes inconnues sont servies par l'application React (pas de 404 au rafraîchissement).
+/*    /index.html   200
