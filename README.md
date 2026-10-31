@@ -1,6 +1,6 @@
-# Business Ring Cleaner — site vitrine
+# Business Ring Cleaner Services — site vitrine
 
-Site marketing (4 pages + 404) pour **Business Ring Cleaner**, entreprise de nettoyage
+Site marketing (4 pages + 404) pour **Business Ring Cleaner Services**, entreprise de nettoyage
 professionnel de canapés, tapis, matelas et cuirs à Douala.
 
 - **Stack** : React 19 · Vite 8 · Tailwind CSS 3.4 · React Router 7 · Framer Motion · Lucide
@@ -17,6 +17,7 @@ npm run dev            # http://localhost:5173
 npm run build          # build de production dans dist/
 npm run preview        # prévisualiser le build
 npm run lint           # oxlint
+npm run logo           # régénère les déclinaisons du logo (voir « Logo officiel »)
 ```
 
 ## Pages et routes
@@ -38,14 +39,16 @@ Ces URL sont partageables et le bouton « précédent » du navigateur ferme la 
 ```
 src/
   assets/images/       # visuels (SVG provisoires à remplacer par des photos)
-    brand/ home/ services/{canapes,tapis,personnel,entretien}/ about/ testimonials/
+    brand/             # logo officiel : logo-source.png (master) + fichiers générés
+    home/ services/{canapes,tapis,personnel,entretien}/ about/ testimonials/
   components/          # Navbar, MobileMenu, Footer, ServiceCard, ServiceModal,
                        # BeforeAfterSlider, QuoteForm, SmartImage, Seo, Counter, ...
   data/                # site.js · images.js · services.js · testimonials.js · faq.js
   pages/               # Home, About, Services, Contact, NotFound
   sections/
     home/ about/ services/ shared/
-public/                # favicon.svg, og-image.jpg, _redirects
+public/                # favicons, site.webmanifest, og-image.jpg, _redirects
+scripts/               # prepare-logo.mjs (déclinaisons du logo)
 ```
 
 ## Personnalisation
@@ -58,11 +61,41 @@ public/                # favicon.svg, og-image.jpg, _redirects
 4. **Photos** : déposer les fichiers dans `src/assets/images/...` puis mettre à jour les imports
    de `src/data/images.js`. Format conseillé : WebP, 1600 px de large max, < 200 Ko.
    En l'absence de fichier, `SmartImage` affiche automatiquement un visuel de secours.
-5. **Logo** : `src/assets/images/brand/logo-color.svg` et `logo-white.svg`.
-6. **Image de partage** : `public/og-image.jpg` (1200 × 630).
+5. **Logo** : fichiers générés, voir la section « Logo officiel » ci-dessous.
+6. **Image de partage** : `public/og-image.jpg` (1200 × 630), également générée par `npm run logo`.
 7. **Formulaire de devis** : renseigner `VITE_EMAILJS_SERVICE_ID`, `VITE_EMAILJS_TEMPLATE_ID`
    et `VITE_EMAILJS_PUBLIC_KEY` dans `.env`. Le template EmailJS doit accepter les variables
    `from_name`, `phone`, `reply_to`, `service`, `quartier`, `message`, `to_email`.
+
+## Logo officiel
+
+Le master est **`src/assets/images/brand/logo-source.png`** (1536 × 896, fond transparent). C'est
+la seule source à remplacer si le client fournit une nouvelle version ; elle reste hors de
+`public/` pour ne pas être déployée inutilement (aucune page ne charge le master).
+`scripts/prepare-logo.mjs` en dérive toutes les déclinaisons (lockup horizontal recomposé à
+partir du symbole et du bloc texte d'origine, logo empilé, symbole seul, favicons, manifeste,
+image de partage) :
+
+```bash
+npm run logo   # nécessite la dépendance de développement sharp (déjà installée)
+```
+
+| Fichier                                  | Usage                                     | Dimensions  |
+| ---------------------------------------- | ----------------------------------------- | ----------- |
+| `src/assets/images/brand/logo-horizontal.png` | navbar + menu mobile (symbole + nom côte à côte) | 756 × 120 |
+| `src/assets/images/brand/logo-stacked.png`    | footer (sur carte blanche) et image de partage  | 640 × 388 |
+| `src/assets/images/brand/logo-mark.png`       | symbole seul (réseaux sociaux, e-mails)         | 512 × 246 |
+| `public/favicon-32.png` / `favicon-192.png`   | onglet navigateur                               | 32 / 192    |
+| `public/apple-touch-icon.png`                 | écran d'accueil iOS                            | 180 × 180   |
+| `public/icon-512.png` / `icon-maskable-512.png` | Android / PWA                                | 512 × 512   |
+| `public/og-image.jpg`                         | partage réseaux sociaux                        | 1200 × 630  |
+| `public/site.webmanifest`                     | installation PWA (nom, couleurs, icônes)       | —           |
+
+Les chemins et les dimensions réelles sont exposés dans `src/data/images.js` (`brand.horizontal`,
+`brand.stacked`, `brand.mark`) : les composants n'ont rien à modifier. Le logo est empilé à
+l'origine ; la navbar utilise donc un lockup horizontal recomposé (symbole à gauche, texte
+redimensionné à droite) pour rester lisible à 36 px de haut. Le footer affiche le logo sur une
+carte blanche, le texte du logo étant noir et bleu.
 
 ## Accessibilité et performance
 
@@ -81,7 +114,7 @@ public/                # favicon.svg, og-image.jpg, _redirects
 
 - [ ] Numéros de téléphone / WhatsApp définitifs et adresse e-mail réelle
 - [ ] Photos avant/après réelles (même cadrage pour les 3 paires)
-- [ ] Logo définitif et photo de partage 1200 × 630
+- [x] Logo officiel intégré (navbar, footer, favicons, image de partage 1200 × 630)
 - [ ] Liens réseaux sociaux et position exacte Google Maps
 - [ ] Grille tarifaire (actuellement « tarif par place, dégressif », sans prix affiché)
 - [ ] Clés EmailJS pour l'envoi automatique du formulaire
