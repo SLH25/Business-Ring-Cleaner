@@ -39,11 +39,12 @@ export default function Navbar() {
             aria-label={`${site.name} — retour à l'accueil`}
           >
             <img
-              src={brand.logoColor.src}
-              alt={brand.logoColor.alt}
-              width="280"
-              height="64"
+              src={brand.horizontal.src}
+              alt={brand.horizontal.alt}
+              width={brand.horizontal.width}
+              height={brand.horizontal.height}
               className="h-9 w-auto sm:h-10"
+              decoding="async"
             />
           </Link>
 

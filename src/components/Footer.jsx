@@ -12,13 +12,17 @@ export default function Footer() {
     <footer className="mt-auto bg-brand-navy text-white/80">
       <div className="container-x grid gap-10 py-14 md:grid-cols-2 lg:grid-cols-4 lg:gap-8">
         <div>
-          <img
-            src={brand.logoWhite.src}
-            alt={brand.logoWhite.alt}
-            width="280"
-            height="64"
-            className="h-10 w-auto"
-          />
+          <div className="inline-flex rounded-2xl bg-white px-4 py-3 shadow-soft">
+            <img
+              src={brand.stacked.src}
+              alt={brand.stacked.alt}
+              width={brand.stacked.width}
+              height={brand.stacked.height}
+              className="h-auto w-[188px] md:w-[200px]"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
           <p className="mt-4 max-w-xs text-sm leading-relaxed">{site.description}</p>
           <p className="mt-4 font-script text-2xl text-brand-light">{site.slogan}</p>
 

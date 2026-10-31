@@ -48,7 +48,7 @@ export default function Hero() {
               </span>
               <span className="text-xs leading-tight text-ink/70">
                 <strong className="block font-display text-sm text-brand-navy">
-                  1 250+ interventions
+                  250+ interventions
                 </strong>
                 à Douala et ses environs
               </span>
@@ -68,7 +68,7 @@ export default function Hero() {
           </motion.p>
 
           <motion.h1 variants={fadeUp} className="heading-xl mt-4">
-            Vos canapés, tapis et cuirs{' '}
+              Ménage, canapés, tapis et cuirs{' '}
             <span className="relative inline-block text-brand">
               comme neufs
               <svg
@@ -90,8 +90,7 @@ export default function Hero() {
           </motion.h1>
 
           <motion.p variants={fadeUp} className="lead mt-5 max-w-xl">
-            Nettoyage, détachage et désinfection à domicile par une équipe formée et un équipement
-            professionnel. Produits sûrs pour vos enfants et vos animaux, rendez-vous rapide.
+            Personnel de ménage, nettoyage et entretien à domicile ou dans vos locaux. Un service professionnel, sérieux et adapté à votre budget, à Douala et ses environs.
           </motion.p>
 
           <motion.div variants={fadeUp} className="mt-7 flex flex-col gap-3 sm:flex-row">

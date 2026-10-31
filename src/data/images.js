@@ -4,8 +4,9 @@
  * (WebP, 150 Ko max, noms sans accents) dans src/assets/images puis remplacer
  * les imports ci-dessous. Aucun composant n'a besoin d'être modifié.
  */
-import logoColor from '../assets/images/brand/logo-color.svg'
-import logoWhite from '../assets/images/brand/logo-white.svg'
+import logoHorizontal from '../assets/images/brand/logo-horizontal.png'
+import logoStacked from '../assets/images/brand/logo-stacked.png'
+import logoMark from '../assets/images/brand/logo-mark.png'
 
 import heroAgent from '../assets/images/home/hero-agent.svg'
 import beforeCanapes from '../assets/images/home/before-canapes.svg'
@@ -24,9 +25,24 @@ import coverEntretien from '../assets/images/services/entretien/cover.svg'
 
 const picture = (src, alt, ratio = 'aspect-[4/3]') => ({ src, alt, ratio })
 
+/**
+ * Logo officiel Business Ring Cleaner Services.
+ * Les fichiers sont générés depuis `src/assets/images/brand/logo-source.png`
+ * par `npm run logo` (scripts/prepare-logo.mjs) : ne pas les retoucher à la main.
+ * `width`/`height` sont les dimensions réelles des fichiers, pour éviter
+ * tout décalage de mise en page pendant le chargement.
+ */
+const logo = (src, width, height) => ({
+  src,
+  width,
+  height,
+  alt: 'Business Ring Cleaner Services',
+})
+
 export const brand = {
-  logoColor: picture(logoColor, 'Logo Business Ring Cleaner'),
-  logoWhite: picture(logoWhite, 'Logo Business Ring Cleaner en blanc'),
+  horizontal: logo(logoHorizontal, 756, 120),
+  stacked: logo(logoStacked, 640, 388),
+  mark: logo(logoMark, 512, 246),
 }
 
 export const images = {

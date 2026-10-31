@@ -4,12 +4,13 @@
  * par les coordonnées définitives du client avant la mise en ligne.
  */
 export const site = {
-  name: 'Business Ring Cleaner',
+  name: 'Business Ring Cleaner Services',
+  altName: 'Business Ring Cleaner',
   shortName: 'BRC',
   slogan: 'Your Solution Partner',
   tagline: 'Nettoyage professionnel de canapés, tapis et cuir à Douala',
   description:
-    "Business Ring Cleaner redonne vie à vos canapés, tapis, matelas et cuirs. Une équipe formée, un équipement professionnel et des produits sûrs, à domicile comme en entreprise.",
+    "Business Ring Cleaner Services redonne vie à vos canapés, tapis, matelas et cuirs. Une équipe formée, un équipement professionnel et des produits sûrs, à domicile comme en entreprise.",
 
   url: 'https://businessringcleaner.cm',
   ogImage: '/og-image.jpg',
@@ -82,31 +83,31 @@ export const callLink = `tel:${site.phone}`
 
 export const seo = {
   home: {
-    title: 'Business Ring Cleaner — Nettoyage canapés, tapis & cuir à Douala',
+    title: 'Business Ring Cleaner Services — Canapés & tapis à Douala',
     description:
       'Nettoyage et désinfection de canapés, tapis, matelas et cuirs à domicile à Douala. Équipement professionnel, produits sûrs, devis gratuit sur WhatsApp.',
     path: '/',
   },
   about: {
-    title: 'À propos — Business Ring Cleaner, votre solution partner à Douala',
+    title: 'À propos — Business Ring Cleaner Services',
     description:
-      "Découvrez Business Ring Cleaner : une équipe sélectionnée, des produits sûrs et un équipement professionnel au service de l'hygiène de vos textiles à Douala.",
+      "Découvrez Business Ring Cleaner Services : une équipe sélectionnée, des produits sûrs et un équipement professionnel au service de l'hygiène de vos textiles à Douala.",
     path: '/a-propos',
   },
   services: {
-    title: 'Nos services — Canapés, tapis, cuir & entretien de locaux',
+    title: 'Nos services — Canapés, tapis & cuir à Douala',
     description:
       'Canapés et fauteuils, tapis et moquettes, cuir et similicuir, personnel et entretien de locaux : découvrez nos prestations à Douala et demandez votre devis.',
     path: '/services',
   },
   contact: {
-    title: 'Contact & devis gratuit — Business Ring Cleaner Douala',
+    title: 'Contact & devis gratuit — Business Ring Cleaner Services',
     description:
       'Appelez, écrivez sur WhatsApp ou remplissez le formulaire pour obtenir un devis gratuit de nettoyage de canapés, tapis et cuir à Douala.',
     path: '/contact',
   },
   notFound: {
-    title: 'Page introuvable — Business Ring Cleaner',
+    title: 'Page introuvable — Business Ring Cleaner Services',
     description: "La page demandée n'existe pas ou a été déplacée.",
     path: '/404',
   },

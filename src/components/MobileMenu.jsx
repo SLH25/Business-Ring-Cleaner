@@ -61,11 +61,12 @@ export default function MobileMenu({ open, onClose }) {
           >
             <div className="flex items-center justify-between border-b border-brand/10 px-5 py-4">
               <img
-                src={brand.logoColor.src}
-                alt={brand.logoColor.alt}
-                width="280"
-                height="64"
-                className="h-9 w-auto"
+                src={brand.horizontal.src}
+                alt={brand.horizontal.alt}
+                width={brand.horizontal.width}
+                height={brand.horizontal.height}
+                className="h-8 w-auto"
+                decoding="async"
               />
               <button
                 ref={closeRef}
